@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Welcome message
-echo "Welcome to mrblister's VPS masternode setup, version 1.1."  
+echo "Welcome to Mandica's quick ODIN VPS masternode setup"  
 echo "This script will now install your masternode."
 
 #Update the VPS server.  Uncomment if you want to update the server.
@@ -9,25 +9,25 @@ echo "This script will now install your masternode."
 #sudo apt dist-upgrade -y
 
 # Set up 1GB of swap for low memory vps.  
-swapoff -a -v
-fallocate -l 1G /swapfile
-chmod 600 /swapfile
-mkswap /swapfile
+# swapoff -a -v
+# fallocate -l 1G /swapfile
+# chmod 600 /swapfile
+# mkswap /swapfile
 
 # Create systemd swap configuration file so the swap remains after reboots. 
-swapsys=/etc/systemd/system/swapfile.swap
-echo "[Unit]" >> $swapsys
-echo "Description=Turn on swap" >> $swapsys
-echo " " >> $swapsys
-echo "[Swap]" >> $swapsys
-echo "What=/swapfile" >> $swapsys
-echo " " >> $swapsys
-echo "[Install]" >> $swapsys
-echo "WantedBy=multi-user.target" >> $swapsys
-systemctl enable swapfile.swap
-systemctl start swapfile.swap
-free
-echo " "
+# swapsys=/etc/systemd/system/swapfile.swap
+# echo "[Unit]" >> $swapsys
+# echo "Description=Turn on swap" >> $swapsys
+# echo " " >> $swapsys
+# echo "[Swap]" >> $swapsys
+# echo "What=/swapfile" >> $swapsys
+# echo " " >> $swapsys
+# echo "[Install]" >> $swapsys
+# echo "WantedBy=multi-user.target" >> $swapsys
+# systemctl enable swapfile.swap
+# systemctl start swapfile.swap
+# free
+# echo " "
 
 #Get odin binaries
 mkdir Downloads
